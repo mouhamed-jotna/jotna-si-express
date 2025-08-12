@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Service de livraison de colis à Tambacounda - JOTNA SI EXPRESS">
+  <meta name="keywords" content="livraison, colis, Tambacounda, Sénégal, JOTNA SI EXPRESS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOTNA SI EXPRESS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header>
+    <h1>JOTNA SI EXPRESS</h1>
+    <p>Envoyez vos colis partout dans la région de Tambacounda</p>
+  </header>
+
+  <section id="commande">
+    <h2>Formulaire de commande</h2>
+    <form id="formulaire">
+      <label>Nom de l'expéditeur :</label>
+      <input type="text" name="expediteur" required>
+
+      <label>Nom du destinataire :</label>
+      <input type="text" name="destinataire" required>
+
+      <label>Adresse de départ :</label>
+      <input type="text" name="depart" required>
+
+      <label>Destination :</label>
+      <select name="destination" id="destination" required>
+        <option value="">Choisir...</option>
+        <option value="Tambacounda centre">Tambacounda centre</option>
+        <option value="Koumpentoum">Koumpentoum</option>
+        <option value="Goudiry">Goudiry</option>
+      </select>
+
+      <label>Description du colis :</label>
+      <textarea name="description" required></textarea>
+
+      <label>Numéro de téléphone :</label>
+      <input type="tel" name="telephone" required>
+
+      <label>Mode de paiement :</label>
+      <select name="paiement" required>
+        <option value="orange">Orange Money</option>
+        <option value="wave">Wave</option>
+      </select>
+
+      <p>📱 Envoyez le montant à <strong>77 123 45 67</strong> via Orange Money ou Wave</p>
+
+      <label>Numéro de transaction :</label>
+      <input type="text" name="transaction" required>
+
+      <p id="prix">Prix : 0 FCFA</p>
+
+      <button type="submit">Envoyer la commande</button>
+    </form>
+  </section>
+
+  <section id="carte">
+    <h2>Choisissez la destination sur la carte</h2>
+    <div id="map" style="height: 400px;"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
